@@ -11,7 +11,6 @@ namespace RTCE_Launcher
     public class LauncherSettings
     {
         public string ServerAddress { get; set; }
-        public bool Player2 { get; set; }
     }
 }
  
