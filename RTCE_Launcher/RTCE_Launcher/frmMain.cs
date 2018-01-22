@@ -90,7 +90,9 @@ namespace RTCE_Launcher
             using (TextWriter writer = new StreamWriter(SETTINGS_FILE_NAME))
                 serializer.Serialize(writer, settings);
 
-            Process.Start(RT_LOCATION, string.IsNullOrWhiteSpace(txtServerAddress.Text) ? SERVER_LAUNCH_ARGUMENT + txtServerAddress.Text : "");
+            Process.Start(RT_LOCATION, !string.IsNullOrWhiteSpace(txtServerAddress.Text) ? SERVER_LAUNCH_ARGUMENT + txtServerAddress.Text : "");
+
+            Application.Exit();
         }
     }
 }
