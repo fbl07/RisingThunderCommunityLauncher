@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmLayout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLayout.Designer.cs">
+      <DependentUpon>frmLayout.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,6 +64,9 @@
     <Compile Include="LauncherSettings.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmLayout.resx">
+      <DependentUpon>frmLayout.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -87,6 +96,7 @@
   <ItemGroup>
     <None Include="logo.png" />
     <None Include="app_bg.jpg" />
+    <None Include="layout.png" />
     <Content Include="rt.ico" />
   </ItemGroup>
   <ItemGroup>

@@ -23,11 +23,12 @@ namespace RTCE_Launcher
         const string SCP_DRIVER_LOCATION = @"RisingThunder\Resources\ScpDriver.exe";
         const string SLIM_DX_SDK_LOCATION = @"RisingThunder\Resources\SlimDX SDK.msi";
         const string X_OUTPUT_LOCATION = @"RisingThunder\Resources\XOutput-RT-Edition.exe";
+        const string JOY_YO_KEY_LOCATION = @"RisingThunder\Resources\JoyToKey.exe";
 
-        const string DEFAULT_INPUT_CONFIG_LOCATION = @"RisingThunder\Config\DefaultInput.ini";
-        const string BACKUP_INPUT_CONFIG_LOCATION = @"RisingThunder\Config\Backup_DefaultInput.bak";
-        const string P1_INPUT_CONFIG_LOCATION = @"RisingThunder\Resources\DefaultInput-GamepadP1.ini";
-        const string P2_INPUT_CONFIG_LOCATION = @"RisingThunder\Resources\DefaultInput-GamepadP2.ini";
+        //const string DEFAULT_INPUT_CONFIG_LOCATION = @"RisingThunder\Config\DefaultInput.ini";
+        //const string BACKUP_INPUT_CONFIG_LOCATION = @"RisingThunder\Config\Backup_DefaultInput.bak";
+        //const string P1_INPUT_CONFIG_LOCATION = @"RisingThunder\Resources\DefaultInput-GamepadP1.ini";
+        //const string P2_INPUT_CONFIG_LOCATION = @"RisingThunder\Resources\DefaultInput-GamepadP2.ini";
 
         const string RT_LOCATION = @"RisingThunder.exe";
         const string SERVER_LAUNCH_ARGUMENT = "-server=";
@@ -46,8 +47,6 @@ namespace RTCE_Launcher
                     if (settings != null)
                     {
                         txtServerAddress.Text = settings.ServerAddress;
-                        if (settings.Player2)
-                            rbP2.Checked = true;
                     }
                 }
             }
@@ -69,21 +68,14 @@ namespace RTCE_Launcher
             Process.Start(X_OUTPUT_LOCATION);
         }
 
+        private void btnStartJTK_Click(object sender, EventArgs e)
+        {
+            Process.Start(JOY_YO_KEY_LOCATION);
+        }
+
         private void btnLaunch_Click(object sender, EventArgs e)
         {
             var settings = new LauncherSettings();
-
-            if (!File.Exists(BACKUP_INPUT_CONFIG_LOCATION))
-                File.Copy(DEFAULT_INPUT_CONFIG_LOCATION, BACKUP_INPUT_CONFIG_LOCATION);
-
-            if (rbP2.Checked)
-            {
-                File.Copy(P2_INPUT_CONFIG_LOCATION, DEFAULT_INPUT_CONFIG_LOCATION, true);
-                settings.Player2 = true;
-            }
-            else
-                File.Copy(P1_INPUT_CONFIG_LOCATION, DEFAULT_INPUT_CONFIG_LOCATION, true);
-
             settings.ServerAddress = txtServerAddress.Text;
 
             var serializer = new XmlSerializer(typeof(LauncherSettings));
@@ -93,6 +85,11 @@ namespace RTCE_Launcher
             Process.Start(RT_LOCATION, !string.IsNullOrWhiteSpace(txtServerAddress.Text) ? SERVER_LAUNCH_ARGUMENT + txtServerAddress.Text : "");
 
             Application.Exit();
+        }
+        private void btnShowLayout_Click(object sender, EventArgs e)
+        {
+            var frmLayout = new frmLayout();
+            frmLayout.Show();
         }
     }
 }

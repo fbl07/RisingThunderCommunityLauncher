@@ -30,50 +30,37 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.btnStartXOutput = new System.Windows.Forms.Button();
             this.btnSlimDX = new System.Windows.Forms.Button();
             this.btnSCP = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.rbP2 = new System.Windows.Forms.RadioButton();
-            this.rbP1 = new System.Windows.Forms.RadioButton();
-            this.label4 = new System.Windows.Forms.Label();
             this.txtServerAddress = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnLaunch = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.btnStartJTK = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.btnStartXOutput);
-            this.groupBox1.Controls.Add(this.btnSlimDX);
-            this.groupBox1.Controls.Add(this.btnSCP);
             this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.btnStartJTK);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(12, 192);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(293, 155);
+            this.groupBox1.Size = new System.Drawing.Size(293, 125);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "DInput / Fighting Sticks / PS3 / PS4 Support";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(6, 108);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(186, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Note : XOutput only works for 1 player";
+            this.groupBox1.Text = "Player 1";
             // 
             // btnStartXOutput
             // 
@@ -104,7 +91,7 @@
             // btnSCP
             // 
             this.btnSCP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(39)))), ((int)(((byte)(61)))));
-            this.btnSCP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSCP.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSCP.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSCP.Location = new System.Drawing.Point(6, 43);
             this.btnSCP.Name = "btnSCP";
@@ -120,60 +107,23 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(6, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(114, 13);
+            this.label1.Size = new System.Drawing.Size(54, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "XOutput Requirements";
+            this.label1.Text = "JoyToKey";
             // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox2.Controls.Add(this.rbP2);
-            this.groupBox2.Controls.Add(this.rbP1);
-            this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.txtServerAddress);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(311, 192);
+            this.groupBox2.Location = new System.Drawing.Point(12, 323);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(293, 155);
+            this.groupBox2.Size = new System.Drawing.Size(592, 73);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Local and Online Play";
-            // 
-            // rbP2
-            // 
-            this.rbP2.AutoSize = true;
-            this.rbP2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbP2.Location = new System.Drawing.Point(10, 123);
-            this.rbP2.Name = "rbP2";
-            this.rbP2.Size = new System.Drawing.Size(211, 17);
-            this.rbP2.TabIndex = 4;
-            this.rbP2.Text = "Gamepad / XInput / DInput as Player 2";
-            this.rbP2.UseVisualStyleBackColor = true;
-            // 
-            // rbP1
-            // 
-            this.rbP1.AutoSize = true;
-            this.rbP1.Checked = true;
-            this.rbP1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbP1.Location = new System.Drawing.Point(10, 99);
-            this.rbP1.Name = "rbP1";
-            this.rbP1.Size = new System.Drawing.Size(211, 17);
-            this.rbP1.TabIndex = 3;
-            this.rbP1.TabStop = true;
-            this.rbP1.Text = "Gamepad / XInput / DInput as Player 1";
-            this.rbP1.UseVisualStyleBackColor = true;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(7, 82);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 13);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Local Play";
+            this.groupBox2.Text = "Online Play";
             // 
             // txtServerAddress
             // 
@@ -183,7 +133,7 @@
             this.txtServerAddress.ForeColor = System.Drawing.Color.White;
             this.txtServerAddress.Location = new System.Drawing.Point(6, 42);
             this.txtServerAddress.Name = "txtServerAddress";
-            this.txtServerAddress.Size = new System.Drawing.Size(230, 20);
+            this.txtServerAddress.Size = new System.Drawing.Size(533, 20);
             this.txtServerAddress.TabIndex = 1;
             // 
             // label3
@@ -202,7 +152,7 @@
             this.btnLaunch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnLaunch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLaunch.ForeColor = System.Drawing.Color.White;
-            this.btnLaunch.Location = new System.Drawing.Point(207, 369);
+            this.btnLaunch.Location = new System.Drawing.Point(207, 413);
             this.btnLaunch.Name = "btnLaunch";
             this.btnLaunch.Size = new System.Drawing.Size(218, 23);
             this.btnLaunch.TabIndex = 2;
@@ -221,15 +171,55 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
+            // groupBox3
+            // 
+            this.groupBox3.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox3.Controls.Add(this.btnStartXOutput);
+            this.groupBox3.Controls.Add(this.label5);
+            this.groupBox3.Controls.Add(this.btnSlimDX);
+            this.groupBox3.Controls.Add(this.btnSCP);
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.ForeColor = System.Drawing.Color.White;
+            this.groupBox3.Location = new System.Drawing.Point(311, 192);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(293, 125);
+            this.groupBox3.TabIndex = 0;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Player 2";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(6, 27);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(114, 13);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "XOutput Requirements";
+            // 
+            // btnStartJTK
+            // 
+            this.btnStartJTK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(39)))), ((int)(((byte)(61)))));
+            this.btnStartJTK.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnStartJTK.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStartJTK.Location = new System.Drawing.Point(6, 43);
+            this.btnStartJTK.Name = "btnStartJTK";
+            this.btnStartJTK.Size = new System.Drawing.Size(234, 23);
+            this.btnStartJTK.TabIndex = 4;
+            this.btnStartJTK.Text = "Start JoyToKey";
+            this.btnStartJTK.UseVisualStyleBackColor = false;
+            this.btnStartJTK.Click += new System.EventHandler(this.btnStartJTK_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::RTCE_Launcher.Properties.Resources.app_bg;
-            this.ClientSize = new System.Drawing.Size(616, 409);
+            this.ClientSize = new System.Drawing.Size(616, 452);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnLaunch);
             this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -243,6 +233,8 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -254,15 +246,14 @@
         private System.Windows.Forms.Button btnSCP;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnStartXOutput;
-        private System.Windows.Forms.RadioButton rbP2;
-        private System.Windows.Forms.RadioButton rbP1;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtServerAddress;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnLaunch;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnStartJTK;
     }
 }
 
