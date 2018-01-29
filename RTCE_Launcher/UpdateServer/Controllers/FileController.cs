@@ -9,21 +9,23 @@ using System.Web.Http;
 
 namespace UpdateServer.Controllers
 {
-    public class FilesController : ApiController
+    public class FileController : ApiController
     {
-        public IEnumerable<Models.FileModel> Get(string currentPatch)
+        public IEnumerable<Common.Models.FileModel> Get(string currentPatch)
         {
             using (var context = new Code.DataAccess.PatchContext())
             {
-                Code.DataAccess.Patch patch;
+                int? patch = null;
 
                 if (string.IsNullOrEmpty(currentPatch))
-                    patch = context.Patches.FirstOrDefault(x => x.Id == context.Patches.Min(y => y.Id));
-                else 
-                    patch = context.Patches.FirstOrDefault(x => x.Name == currentPatch);
+                    patch = context.Patches.Min(x => x.Id);
+                else if (currentPatch == "-1")
+                    patch = -1;
+                else
+                    patch = context.Patches.FirstOrDefault(x => x.Name == currentPatch).Id;
 
-                if (patch != null)
-                    return context.Files.Where(x => x.PatchLastUpdated.Id > patch.Id).ToArray().Select(x => new Models.FileModel() { Id = x.Id, Path = x.Path });
+                if (patch.HasValue)
+                    return context.Files.Where(x => x.PatchLastUpdated.Id > patch).ToArray().Select(x => new Common.Models.FileModel() { Id = x.Id, Path = x.Path });
                 else
                     throw new HttpResponseException(HttpStatusCode.NotFound);
             }

@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RTCE_Launcher", "RTCE_Launc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UpdateServer", "UpdateServer\UpdateServer.csproj", "{56A753BB-22A7-40D7-BA80-381674B11582}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{AFAB62CA-84AC-48A0-8035-F15A1A46F300}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{56A753BB-22A7-40D7-BA80-381674B11582}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{56A753BB-22A7-40D7-BA80-381674B11582}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{56A753BB-22A7-40D7-BA80-381674B11582}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFAB62CA-84AC-48A0-8035-F15A1A46F300}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFAB62CA-84AC-48A0-8035-F15A1A46F300}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFAB62CA-84AC-48A0-8035-F15A1A46F300}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFAB62CA-84AC-48A0-8035-F15A1A46F300}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

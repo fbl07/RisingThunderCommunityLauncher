@@ -30,10 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnStartJTK = new System.Windows.Forms.Button();
             this.btnStartXOutput = new System.Windows.Forms.Button();
             this.btnSlimDX = new System.Windows.Forms.Button();
             this.btnSCP = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtServerAddress = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -41,7 +42,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.btnStartJTK = new System.Windows.Forms.Button();
+            this.btnCheckForUpdate = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -61,6 +62,29 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Player 1";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(6, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(54, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "JoyToKey";
+            // 
+            // btnStartJTK
+            // 
+            this.btnStartJTK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(39)))), ((int)(((byte)(61)))));
+            this.btnStartJTK.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnStartJTK.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStartJTK.Location = new System.Drawing.Point(6, 43);
+            this.btnStartJTK.Name = "btnStartJTK";
+            this.btnStartJTK.Size = new System.Drawing.Size(234, 23);
+            this.btnStartJTK.TabIndex = 4;
+            this.btnStartJTK.Text = "Start JoyToKey";
+            this.btnStartJTK.UseVisualStyleBackColor = false;
+            this.btnStartJTK.Click += new System.EventHandler(this.btnStartJTK_Click);
             // 
             // btnStartXOutput
             // 
@@ -100,16 +124,6 @@
             this.btnSCP.Text = "Install SCP Driver";
             this.btnSCP.UseVisualStyleBackColor = false;
             this.btnSCP.Click += new System.EventHandler(this.btnSCP_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "JoyToKey";
             // 
             // groupBox2
             // 
@@ -197,18 +211,19 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "XOutput Requirements";
             // 
-            // btnStartJTK
+            // btnCheckForUpdate
             // 
-            this.btnStartJTK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(39)))), ((int)(((byte)(61)))));
-            this.btnStartJTK.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnStartJTK.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStartJTK.Location = new System.Drawing.Point(6, 43);
-            this.btnStartJTK.Name = "btnStartJTK";
-            this.btnStartJTK.Size = new System.Drawing.Size(234, 23);
-            this.btnStartJTK.TabIndex = 4;
-            this.btnStartJTK.Text = "Start JoyToKey";
-            this.btnStartJTK.UseVisualStyleBackColor = false;
-            this.btnStartJTK.Click += new System.EventHandler(this.btnStartJTK_Click);
+            this.btnCheckForUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(39)))), ((int)(((byte)(61)))));
+            this.btnCheckForUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCheckForUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCheckForUpdate.Location = new System.Drawing.Point(12, 417);
+            this.btnCheckForUpdate.Name = "btnCheckForUpdate";
+            this.btnCheckForUpdate.Size = new System.Drawing.Size(114, 23);
+            this.btnCheckForUpdate.TabIndex = 4;
+            this.btnCheckForUpdate.Text = "Check for Updates";
+            this.btnCheckForUpdate.UseVisualStyleBackColor = false;
+            this.btnCheckForUpdate.Visible = false;
+            this.btnCheckForUpdate.Click += new System.EventHandler(this.btnCheckForUpdate_Click);
             // 
             // frmMain
             // 
@@ -216,6 +231,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::RTCE_Launcher.Properties.Resources.app_bg;
             this.ClientSize = new System.Drawing.Size(616, 452);
+            this.Controls.Add(this.btnCheckForUpdate);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnLaunch);
             this.Controls.Add(this.groupBox2);
@@ -254,6 +270,7 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnStartJTK;
+        private System.Windows.Forms.Button btnCheckForUpdate;
     }
 }
 

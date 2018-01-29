@@ -35,14 +35,20 @@ namespace RTCE_Launcher
 
         const string SETTINGS_FILE_NAME = @"LauncherSettings.xml";
 
+        LauncherSettings settings;
+
         private void frmMain_Load(object sender, EventArgs e)
         {
+#if DEBUG
+            btnCheckForUpdate.Visible = true;
+#endif
+
             if (File.Exists(SETTINGS_FILE_NAME))
             {
                 var deserializer = new XmlSerializer(typeof(LauncherSettings));
                 using (TextReader reader = new StreamReader(SETTINGS_FILE_NAME))
                 {
-                    var settings = (LauncherSettings)deserializer.Deserialize(reader);
+                    settings = (LauncherSettings)deserializer.Deserialize(reader);
 
                     if (settings != null)
                     {
@@ -75,7 +81,7 @@ namespace RTCE_Launcher
 
         private void btnLaunch_Click(object sender, EventArgs e)
         {
-            var settings = new LauncherSettings();
+            //var settings = new LauncherSettings();
             settings.ServerAddress = txtServerAddress.Text;
 
             var serializer = new XmlSerializer(typeof(LauncherSettings));
@@ -90,6 +96,12 @@ namespace RTCE_Launcher
         {
             var frmLayout = new frmLayout();
             frmLayout.Show();
+        }
+
+        private void btnCheckForUpdate_Click(object sender, EventArgs e)
+        {
+            var frmUpdate = new frmUpdate(settings);
+            frmUpdate.ShowDialog();
         }
     }
 }
