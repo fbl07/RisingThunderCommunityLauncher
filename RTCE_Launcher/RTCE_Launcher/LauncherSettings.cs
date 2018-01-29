@@ -12,6 +12,7 @@ namespace RTCE_Launcher
     {
         public string ServerAddress { get; set; }
         public string CurrentPatch { get; set; }
+        public bool UseAltServerParameter { get; set; }
     }
 }
  

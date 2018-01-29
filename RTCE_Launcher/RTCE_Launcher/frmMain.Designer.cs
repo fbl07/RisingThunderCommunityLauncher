@@ -43,6 +43,8 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnCheckForUpdate = new System.Windows.Forms.Button();
+            this.chkAltServer = new System.Windows.Forms.CheckBox();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -224,6 +226,29 @@
             this.btnCheckForUpdate.UseVisualStyleBackColor = false;
             this.btnCheckForUpdate.Visible = false;
             this.btnCheckForUpdate.Click += new System.EventHandler(this.btnCheckForUpdate_Click);
+			//
+			// chkAltServer
+			//
+            this.chkAltServer.AutoSize = true;
+            this.chkAltServer.BackColor = System.Drawing.Color.Transparent;
+            this.chkAltServer.Location = new System.Drawing.Point(437, 417);
+            this.chkAltServer.Name = "chkAltServer";
+            this.chkAltServer.Size = new System.Drawing.Size(156, 17);
+            this.chkAltServer.TabIndex = 4;
+            this.chkAltServer.Text = "Alternate Server Parameter ";
+            this.chkAltServer.UseVisualStyleBackColor = false;
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.linkLabel1.Location = new System.Drawing.Point(12, 417);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(143, 26);
+            this.linkLabel1.TabIndex = 5;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Encountered a bug or issue?\r\nClick here to report it";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // frmMain
             // 
@@ -232,6 +257,8 @@
             this.BackgroundImage = global::RTCE_Launcher.Properties.Resources.app_bg;
             this.ClientSize = new System.Drawing.Size(616, 452);
             this.Controls.Add(this.btnCheckForUpdate);
+            this.Controls.Add(this.linkLabel1);
+            this.Controls.Add(this.chkAltServer);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnLaunch);
             this.Controls.Add(this.groupBox2);
@@ -252,6 +279,7 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -271,6 +299,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnStartJTK;
         private System.Windows.Forms.Button btnCheckForUpdate;
+        private System.Windows.Forms.CheckBox chkAltServer;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }
 

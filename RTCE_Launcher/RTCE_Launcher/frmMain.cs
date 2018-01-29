@@ -32,6 +32,7 @@ namespace RTCE_Launcher
 
         const string RT_LOCATION = @"RisingThunder.exe";
         const string SERVER_LAUNCH_ARGUMENT = "-server=";
+        const string ALT_SERVER_LAUNCH_ARGUMENT = "server=";
 
         const string SETTINGS_FILE_NAME = @"LauncherSettings.xml";
 
@@ -53,6 +54,7 @@ namespace RTCE_Launcher
                     if (settings != null)
                     {
                         txtServerAddress.Text = settings.ServerAddress;
+                        chkAltServer.Checked = settings.UseAltServerParameter;
                     }
                 }
             }
@@ -83,12 +85,13 @@ namespace RTCE_Launcher
         {
             //var settings = new LauncherSettings();
             settings.ServerAddress = txtServerAddress.Text;
+            settings.UseAltServerParameter = chkAltServer.Checked;
 
             var serializer = new XmlSerializer(typeof(LauncherSettings));
             using (TextWriter writer = new StreamWriter(SETTINGS_FILE_NAME))
                 serializer.Serialize(writer, settings);
 
-            Process.Start(RT_LOCATION, !string.IsNullOrWhiteSpace(txtServerAddress.Text) ? SERVER_LAUNCH_ARGUMENT + txtServerAddress.Text : "");
+            Process.Start(RT_LOCATION, !string.IsNullOrWhiteSpace(txtServerAddress.Text) ? (chkAltServer.Checked ? ALT_SERVER_LAUNCH_ARGUMENT : SERVER_LAUNCH_ARGUMENT) + txtServerAddress.Text : "");
 
             Application.Exit();
         }
@@ -102,6 +105,12 @@ namespace RTCE_Launcher
         {
             var frmUpdate = new frmUpdate(settings);
             frmUpdate.ShowDialog();
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            var frmBugs = new frmBugReport();
+            frmBugs.ShowDialog();
         }
     }
 }
