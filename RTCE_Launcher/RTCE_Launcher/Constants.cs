@@ -8,7 +8,7 @@ namespace RTCE_Launcher
 {
     class Constants
     {
-        public const string SEND_GRID_API_KEY = "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";
+        public const string SEND_GRID_API_KEY = "YOUR SEND GRID API KEY";
         public const string BUG_REPORT_EMAIL = "rtbugreports@hotmail.com";
     }
 }
